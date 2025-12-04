@@ -1,7 +1,7 @@
 // Area of a triangle = (b x h)/2
 
 import java.lang.*;
-import java.util.Scanner;
+import java.util.*;
 
 class Video_031_AreaOfTriangle
 

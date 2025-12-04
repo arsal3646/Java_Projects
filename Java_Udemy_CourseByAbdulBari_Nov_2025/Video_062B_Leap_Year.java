@@ -1,7 +1,7 @@
 // Student Challenge: Find a given year is a leap year
 
 import java.lang.*;
-import java.util.Scanner;
+import java.util.*;  // To use Scanner class
 
 class Video_062B_Leap_Year
 {
