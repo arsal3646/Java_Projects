@@ -1,2 +1,0 @@
-# JavaProjects
-OOP - Java Course

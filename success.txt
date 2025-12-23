@@ -1,1 +1,0 @@
-SSH connection successful from Termux S7
