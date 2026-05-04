@@ -255,22 +255,27 @@ void validateIssueNumber() throws CheckIssueNumberException {
 */
 
 void validateISSN() throws Check_ISSN_Exception {
+
+// This ensures that length is exactly 9 characters.
+
     if (issn.length() != 9) {
         throw new Check_ISSN_Exception("ISSN must be exactly 9 characters long.");
     }
+
+// This ensures that there is a hyphen at the 5th position (index 4).
 
     if (issn.charAt(4) != '-') {
         throw new Check_ISSN_Exception("ISSN must have a hyphen at the 5th position.");
     }
         
-    // The first for-loop checks the first four characters (index 0 to 3) to ensure they are digits.
-    // The second for-loop checks the last four characters (index 5 to 8) to ensure they are digits.
+// The first for-loop checks the first four characters (index 0 to 3) to ensure they are digits.
 
     for (int i = 0; i < 4; i++) {
         if (!Character.isDigit(issn.charAt(i))) {
             throw new Check_ISSN_Exception("First four ISSN characters must be digits.");
         }
     }
+// The second for-loop checks the last four characters (index 5 to 8) to ensure they are digits.
 
     for (int i = 5; i < 9; i++) {
         if (!Character.isDigit(issn.charAt(i))) {
