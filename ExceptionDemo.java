@@ -1,3 +1,8 @@
+// This will allow us to use ArrayList which we need for storing our journal objects.
+// The asterisk (*) means that we are importing all classes from the java.util package, including ArrayList.
+
+import java.util.*;   
+
 /* Summary of the Assignment: 
 
     The task is to create a Java program that demonstrates the use of: 
@@ -284,4 +289,10 @@ void validateISSN() throws Check_ISSN_Exception {
     }
 }
 
+}
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+
+    }
 }
