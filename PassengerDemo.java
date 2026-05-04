@@ -141,7 +141,7 @@ passengers.add(p4);
 passengers.add(p5);
 
 /*  * The below line sorts the passengers list based on the name of the passengers in alphabetical order.
-    * We can use lambda expression but I don't know how to use it.
+    * We can use lambda expression but I don't know how to use it properly.
     
     * The Collections is used when we want to perform operations on collections of objects, such as sorting, searching, or modifying them.
     * Collection is an alternative to arrays. 
