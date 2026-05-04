@@ -358,7 +358,7 @@ public class ExceptionDemo {
     * It is caught in the catch block, and an error message is printed indicating that the journal is invalid.
     
     * Only valid journal entries are accepted and stored in the validJournals list.
-    * Invalid entries are highlighted with appropriate error messages.
+    * Invalid entries are highlighted with appropriate error messages..
 */
 
 for (Journal j : journals) {
