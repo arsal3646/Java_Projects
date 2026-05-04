@@ -26,6 +26,10 @@ The program consists of two main parts:
     
 */
 
+/*  The Journal class represents a journal with its details such as name, journal ID, issue number, and ISSN. 
+    This is a blueprint for creating journal objects in the Journal Registration system.
+*/
+
 class Journal {
     String name;
     String journalId;
