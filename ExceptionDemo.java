@@ -194,28 +194,17 @@ class Journal {
     * This method is responsible for validating the journal ID according to specific criteria given in the assignment requirements.
     * The journal ID must contain only letters and numbers. 
     * If the journal ID contains any character that is not a letter or a number, a CheckJournalIdException is thrown with an appropriate error message. 
-    * The method signature includes "throws CheckJournalIdException", which indicates that this method may throw a CheckJournalIdException if the validation fails.
-    * The method uses a for-loop to iterate through each character of the journal ID and checks if it is either a letter or a digit using Character.isLetterOrDigit() method.
-    * If any character is found that is not a letter or a digit, a CheckJournalIdException is thrown with the message "Journal ID must contain only letters and numbers."
+
+    * The method signature includes "throws CheckJournalIdException". 
+    * This indicates that this method may throw a CheckJournalIdException if the validation fails.
+    
+    * The method uses a for-loop to iterate through each character of the journal ID. 
+    * It checks if it is either a letter or a digit using Character.isLetterOrDigit() method.
+    
+    * If any character is found that is not a letter or a digit, a CheckJournalIdException is thrown with a message to user.
+
     * The method does not return any value, as indicated by the "void" keyword in the method signature.
-    * This method ensures that the journal ID adheres to the specified format, which is crucial for maintaining data integrity in the Journal Registration system.
-    * The use of custom exceptions like CheckJournalIdException allows for more specific error handling and provides clear feedback to the user about what went wrong with their input.
-    * Overall, this method is an essential part of the validation process for journal entries in the Journal Registration system, ensuring that only valid journal IDs are accepted and processed.
-    * In summary, the validateJournalId() method is a critical component of the Journal class that enforces the rules for valid journal IDs, contributing to the robustness and reliability of the Journal Registration system.
-    * By implementing this method, we can ensure that all journal IDs are properly formatted and free of invalid characters, which is essential for the functionality of the system.
-    * This method, along with the other validation methods in the Journal class, helps to maintain the integrity of the data and provides a better user experience by catching errors early and providing specific feedback on what needs to be corrected.
-    * In conclusion, the validateJournalId() method is a key part of the Journal class that helps to ensure that all journal entries are valid and meet the specified criteria for journal IDs, contributing to the overall success of the Journal Registration system.
-    * By using custom exceptions and character-level validation, we can create a robust and user-friendly system for managing journal registrations without relying on regular expressions, as per the assignment requirements.
-    * This method is an example of how we can implement custom validation logic in Java using exceptions to handle errors gracefully and provide meaningful feedback to users.
-    * In the context of the Journal Registration system, the validateJournalId() method plays a crucial role in ensuring that all journal IDs are valid and conform to the specified format, which is essential for maintaining the integrity of the system and providing a positive user experience.
-    * Overall, the validateJournalId() method is an important part of the Journal class that helps to enforce the rules for valid journal IDs and contributes to the success of the Journal Registration system by ensuring that only valid entries are accepted and processed.
-    * In summary, the validateJournalId() method is a critical component of the Journal class that ensures that all journal IDs are properly formatted and free of invalid characters, which is essential for the functionality and reliability of the Journal Registration system.
-    * By implementing this method, we can maintain the integrity of the data and provide a better user experience by catching errors early and providing specific feedback on what needs to be corrected, ultimately contributing to the overall success of the Journal Registration system.
-
-
-
-
-
+*/
 
     void validateJournalId() throws CheckJournalIdException {
     for (int i = 0; i < journalId.length(); i++) {
