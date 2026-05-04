@@ -26,17 +26,6 @@ The program consists of two main parts:
     
 */
 
-/*  * The Journal class represents a journal with its details such as name, journal ID, issue number, and ISSN. 
-    * This is a blueprint for creating journal objects in the Journal Registration system.
-*/
-
-class Journal {
-    String name;
-    String journalId;
-    String issueNumber;
-    String issn;
-}
-
 /*  * The CheckNameException class is a custom exception that extends the Exception class.
     * It is using inheritance concept of Object-Oriented Programming (OOP).
     * The class creates a custom exception for handling errors related to journal name validation. 
@@ -117,3 +106,73 @@ class Check_ISSN_Exception extends Exception {
     }
 }
 
+/*  * The Journal class represents a journal with its details such as name, journal ID, issue number, and ISSN. 
+    * This is a blueprint for creating journal objects in the Journal Registration system.
+*/
+
+class Journal {
+    String name;
+    String journalId;
+    String issueNumber;
+    String issn;
+
+/*  * The below constructor initializes the attributes of the Journal class. 
+    * It takes four parameters: name, journalId, issueNumber, and issn.
+    * When a Journal object is created, these parameters are passed to the constructor to set the initial values of the journal's attributes.
+    
+    * THIS keyword means that the current instance of the Journal class is being referred to. 
+    * This is used to differentiate between the instance variables (attributes) and the parameters passed to the constructor.
+    * Both have the same names, i.e. both the instance variable and the parameter are named 'name', 'journalId', 'issueNumber', and 'issn'.
+        
+*/  
+    Journal(String name, String journalId, String issueNumber, String issn) {
+        this.name = name;
+        this.journalId = journalId;
+        this.issueNumber = issueNumber;
+        this.issn = issn;
+    }
+
+/*  * The validateName() method is responsible for validating the journal name according to specific criteria.
+    
+    * This method checks if the journal name is valid based on the rules given in the assignment requirements:
+    
+    * The journal name must not exceed 30 characters in length. 
+    * If it does, a CheckNameException is thrown with an appropriate error message.
+    
+    * The journal name must contain only alphabetic characters (letters). 
+    * If it contains any non-alphabetic characters, a CheckNameException is thrown with an error message.    
+ 
+    * If the journal name passes both checks, it is considered valid, and the method completes.
+
+    * Let's break down the method line by line:
+
+    * The method signature includes "throws CheckNameException".
+    * This indicates that this method may throw a CheckNameException if the validation fails. 
+    * This allows the calling code to handle this exception appropriately when it is thrown.
+
+    * The "void" keyword indicates that this method does not return any value.
+
+    * The method name is "validateName", which clearly indicates its purpose, i.e. to validate the journal name.
+
+    * The first check in the method is to see if the length of the journal name exceeds 30 characters. 
+    * If it does, a CheckNameException is thrown with the message "Journal name must not exceed 30 characters." 
+    * This provides specific feedback to the user about why their journal name is invalid.
+    * 
+    * The second check is a for-loop that iterates through each character of the journal name. 
+    * Instead of REGEX (regular expressions), the Character.isLetter() method is used to check if each character is a letter.
+    * If any character is found that is not a letter, a CheckNameException is thrown with the message "Journal name must contain only alphabets."
+    
+*/
+
+    void validateName() throws CheckNameException {
+        if (name.length() > 30) {
+            throw new CheckNameException("Journal name must not exceed 30 characters.");
+        }
+
+        for (int i = 0; i < name.length(); i++) {
+            if (!Character.isLetter(name.charAt(i))) {
+                throw new CheckNameException("Journal name must contain only alphabets.");
+            }
+        }
+    }
+}
