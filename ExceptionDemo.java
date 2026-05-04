@@ -2,7 +2,7 @@
 
     The task is to create a Java program that demonstrates the use of: 
     
-    * exceptions handling 
+    * exception handling 
     * collections
     * sorting mechanisms. 
 
@@ -26,8 +26,8 @@ The program consists of two main parts:
     
 */
 
-/*  The Journal class represents a journal with its details such as name, journal ID, issue number, and ISSN. 
-    This is a blueprint for creating journal objects in the Journal Registration system.
+/*  * The Journal class represents a journal with its details such as name, journal ID, issue number, and ISSN. 
+    * This is a blueprint for creating journal objects in the Journal Registration system.
 */
 
 class Journal {
@@ -36,3 +36,19 @@ class Journal {
     String issueNumber;
     String issn;
 }
+
+/*  * The CheckNameException class is a custom exception that extends the Exception class.
+    * It is using inheritance concept of Object-Oriented Programming (OOP).
+    * The class creates a custom exception for handling errors related to journal name validation. 
+    * It is used to handle specific errors related to journal name validation in the Journal Registration system. 
+    * When a journal name does not meet the required criteria, this exception can be thrown with a custom error message.
+
+*?      
+
+
+class CheckNameException extends Exception {
+    CheckNameException(String message) {
+        super(message);
+    }
+}
+
