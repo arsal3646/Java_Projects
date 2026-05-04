@@ -303,8 +303,84 @@ public class ExceptionDemo {
     * In our case, we are specifying that our ArrayList will only hold Journal objects.
     * This will help us prevent errors and ensure type-safety.         
 */
-        ArrayList<Journal> validJournals = new ArrayList<>();
+    ArrayList<Journal> validJournals = new ArrayList<>();
+
+        Journal j101 = new Journal("Scientific", "A101", "Vol1", "1010-2020");      // valid - no issue
+        Journal j102 = new Journal("Economica", "B202", "Vol2", "2020-3030");       // valid - no issue
+        Journal j103 = new Journal("Financia", "G303", "Vol3", "3030-4040");      // valid - no issue
+
+        Journal j104 = new Journal("@ccounting Wizzard", "D404", "Vol4", "4040-5050");     // invalid name because of @ and space
+        Journal j105 = new Journal("Geographica", "E#505", "Vol5", "5050-6060");   // invalid id because of #
+        
+        // invalid issue no as it exceeds 20 characters
+        Journal j106 = new Journal("ZooTologia", "Z606", "VeryVeryLongIssueNumberOver20Chars", "6060-7070"); 
+        
+        Journal j107 = new Journal("Mystica", "E707", "Vol7", "70707070");         // invalid issn (hyphen is missing in 5th position)
+        Journal j108 = new Journal("Mathematicia", "T808", "Vol8", "80a0-9090");      // invalid issn (not all digits)
+        Journal j109 = new Journal("Iota", "I909", "Vol9", "9090-000");        // invalid issn (length wrong as it should be 9)
+
+        Journal j110 = new Journal("Kappa", "K111", "Vol10", "1111-2222");     // valid - no issue
+
+
+/*  * The below array is used to store all the journal objects that we have created.
+    
+    * Why we use an array here instead of an ArrayList?
+    * We can use an array here because we have a fixed number of journal objects (10 in this case).
+    * ArrayList is better when we don't know the number of elements in advance or when we need to add/remove elements. 
+    
+    * journal[] is the syntax for declaring an array of Journal objects.
+    * journals is the name of the array variable that will hold the Journal objects.
+    * The array is initialized with the journal objects j101 to j110 that we created in the main method. 
+*/
+    Journal[] journals = 
+    {
+        j101,
+        j102,
+        j103,
+        j104,
+        j105,
+        j106,
+        j107,
+        j108,
+        j109,
+        j110
+    };
+
+/*  * The below is a for-each loop that iterates through each Journal object in the journals array.
+    * It validates them using the validation methods defined in the Journal class.
+
+    * Journal objects are represented by the variable j in the loop.
+
+    * For each journal object, we call all the validation methods created above.
+
+    * If all validations pass without throwing an exception, the journal is added to the validJournals ArrayList.
+    * If any validation fails and an exception is thrown,
+    * It is caught in the catch block, and an error message is printed indicating that the journal is invalid.
+    
+    * Only valid journal entries are accepted and stored in the validJournals list.
+    * Invalid entries are highlighted with appropriate error messages.
+*/
+
+for (Journal j : journals) {
+    try {
+        j.validateName();
+        j.validateJournalId();
+        j.validateIssueNumber();
+        j.validateISSN();
+
+        validJournals.add(j);
+
+    } catch (Exception e) {
+        System.out.println("Invalid Journal: " + e.getMessage());
+    }
+}
+
+
 
 
     }
+
+
+
+
 }
