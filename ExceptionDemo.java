@@ -74,3 +74,46 @@ class CheckJournalIdException extends Exception {
         super(message);
     }
 }
+
+/*  * The CheckIssueNumberException class is a custom exception that extends the Exception class.
+    * This exception is specifically created to handle errors related to the journal issue number.
+
+    * According to the assignment requirements, the issue number should NOT exceed 20 characters.
+    * In other words, if the issue number length is greater than 20 characters, then it is considered invalid.
+    * This custom exception will be thrown with an error message.
+
+    * The class has one constructor, i.e. CheckIssueNumberException(String message).
+    * This constructor accepts a custom error message when the exception is thrown.
+    * The statement super(message) passes this custom error message to the constructor of the parent Exception class.
+
+    Note: The parent Exception class stores this message internally, and it can later be retrieved using methods like getMessage() when the exception is caught.
+*/
+
+class CheckIssueNumberException extends Exception {
+    CheckIssueNumberException(String message) {
+        super(message);
+    }
+}
+
+/*  * The Check_ISSN_Exception class is a custom exception that extends the Exception class.
+    * This exception is specifically created to handle errors related to the ISSN of the journal.
+
+    * According to the assignment requirements, the ISSN must be exactly 9 characters long (in a specific format).
+    * The required ISSN format is NNNN-NNNN.
+    * This means there must be four digits, then one hyphen, and then four more digits.
+    * The hyphen must be present at the 5th position. This is important as it must not be in any other position.
+    * Note: In Java index terms, the 5th position means index 4, because Java indexing starts from 0.
+    
+    * This custom exception will be thrown when the ISSN does not follow the required format.
+
+    * The constructor Check_ISSN_Exception(String message) accepts a custom error message.
+    * The statement super(message) passes this custom error message to the constructor of the parent Exception class.
+    * The parent Exception class stores this message internally, and it can later be displayed using getMessage().
+*/
+
+class Check_ISSN_Exception extends Exception {
+    Check_ISSN_Exception(String message) {
+        super(message);
+    }
+}
+
