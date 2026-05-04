@@ -42,9 +42,12 @@ class Journal {
     * The class creates a custom exception for handling errors related to journal name validation. 
     * It is used to handle specific errors related to journal name validation in the Journal Registration system. 
     * When a journal name does not meet the required criteria, this exception can be thrown with a custom error message.
+    
+    * The exception is used when the journal name is invalid, such as when it contains non-alphabetic characters or is empty.
+    * The message passed to the constructor is sent to the parent Exception class using the super() method.
+    * Super() method allows for custom error messages to be displayed when the exception is thrown.
 
-*?      
-
+*/      
 
 class CheckNameException extends Exception {
     CheckNameException(String message) {
@@ -52,3 +55,24 @@ class CheckNameException extends Exception {
     }
 }
 
+
+
+/*  * The CheckJournalIdException class is also a custom exception that extends the Exception class.
+    * An exception is thrown when the journal ID is invalid such as not following the required format or containing invalid characters. 
+    * Valid characters for journal ID include only letters and numbers only. Special characters are not allowed.
+    * The error message is passed to the parent Exception class using super(message).
+
+    Line-by-line explanation of the CheckJournalIdException class:
+    
+    * The first line extends the built-in Exception class. 
+    * This means that CheckJournalIdException is a custom exception that can be thrown and caught in the program.
+    
+    * CheckJournalIdException(String message) is the constructor for the CheckJournalIdException class. 
+    * The constructor takes a single parameter (message), which is a String that contains the error message.       
+*/
+
+class CheckJournalIdException extends Exception {
+    CheckJournalIdException(String message) {
+        super(message);
+    }
+}
