@@ -162,12 +162,25 @@ class Journal {
     * Instead of REGEX (regular expressions), the Character.isLetter() method is used to check if each character is a letter.
     * If any character is found that is not a letter, a CheckNameException is thrown with the message "Journal name must contain only alphabets."
     
+    * For my knowledge only - the difference between throw and throws in Java:
+    
+    * "throw" is used to actually throw an exception.
+    * "throws" is used in a method signature to declare that the method may throw certain exceptions. 
 */
 
     void validateName() throws CheckNameException {
         if (name.length() > 30) {
-            throw new CheckNameException("Journal name must not exceed 30 characters.");
+            throw new CheckNameException("Journal name must not exceed 30 characters."); 
+            
+            // is this constructor or method? 
+            // I think this is a constructor because it is creating an instance of the CheckNameException class and passing a message to it.
+        
         }
+
+    // this for-loop iterates through each character of the journal name and checks if it is a letter using Character.isLetter() method.
+    // If any character is found that is not a letter, a CheckNameException is thrown with the message "Journal name must contain only alphabets."
+
+    // the ! before Character.isLetter() means that if the character is NOT a letter, then the condition is true and the exception is thrown.
 
         for (int i = 0; i < name.length(); i++) {
             if (!Character.isLetter(name.charAt(i))) {
@@ -175,4 +188,69 @@ class Journal {
             }
         }
     }
+
+/* * This is our second validation method, i.e. validateJournalId().
+
+    * This method is responsible for validating the journal ID according to specific criteria given in the assignment requirements.
+    * The journal ID must contain only letters and numbers. 
+    * If the journal ID contains any character that is not a letter or a number, a CheckJournalIdException is thrown with an appropriate error message. 
+    * The method signature includes "throws CheckJournalIdException", which indicates that this method may throw a CheckJournalIdException if the validation fails.
+    * The method uses a for-loop to iterate through each character of the journal ID and checks if it is either a letter or a digit using Character.isLetterOrDigit() method.
+    * If any character is found that is not a letter or a digit, a CheckJournalIdException is thrown with the message "Journal ID must contain only letters and numbers."
+    * The method does not return any value, as indicated by the "void" keyword in the method signature.
+    * This method ensures that the journal ID adheres to the specified format, which is crucial for maintaining data integrity in the Journal Registration system.
+    * The use of custom exceptions like CheckJournalIdException allows for more specific error handling and provides clear feedback to the user about what went wrong with their input.
+    * Overall, this method is an essential part of the validation process for journal entries in the Journal Registration system, ensuring that only valid journal IDs are accepted and processed.
+    * In summary, the validateJournalId() method is a critical component of the Journal class that enforces the rules for valid journal IDs, contributing to the robustness and reliability of the Journal Registration system.
+    * By implementing this method, we can ensure that all journal IDs are properly formatted and free of invalid characters, which is essential for the functionality of the system.
+    * This method, along with the other validation methods in the Journal class, helps to maintain the integrity of the data and provides a better user experience by catching errors early and providing specific feedback on what needs to be corrected.
+    * In conclusion, the validateJournalId() method is a key part of the Journal class that helps to ensure that all journal entries are valid and meet the specified criteria for journal IDs, contributing to the overall success of the Journal Registration system.
+    * By using custom exceptions and character-level validation, we can create a robust and user-friendly system for managing journal registrations without relying on regular expressions, as per the assignment requirements.
+    * This method is an example of how we can implement custom validation logic in Java using exceptions to handle errors gracefully and provide meaningful feedback to users.
+    * In the context of the Journal Registration system, the validateJournalId() method plays a crucial role in ensuring that all journal IDs are valid and conform to the specified format, which is essential for maintaining the integrity of the system and providing a positive user experience.
+    * Overall, the validateJournalId() method is an important part of the Journal class that helps to enforce the rules for valid journal IDs and contributes to the success of the Journal Registration system by ensuring that only valid entries are accepted and processed.
+    * In summary, the validateJournalId() method is a critical component of the Journal class that ensures that all journal IDs are properly formatted and free of invalid characters, which is essential for the functionality and reliability of the Journal Registration system.
+    * By implementing this method, we can maintain the integrity of the data and provide a better user experience by catching errors early and providing specific feedback on what needs to be corrected, ultimately contributing to the overall success of the Journal Registration system.
+
+
+
+
+
+
+    void validateJournalId() throws CheckJournalIdException {
+    for (int i = 0; i < journalId.length(); i++) {
+        if (!Character.isLetterOrDigit(journalId.charAt(i))) {
+            throw new CheckJournalIdException("Journal ID must contain only letters and numbers.");
+        }
+    }
+}
+
+void validateIssueNumber() throws CheckIssueNumberException {
+    if (issueNumber.length() > 20) {
+        throw new CheckIssueNumberException("Issue number must not exceed 20 characters.");
+    }
+}
+
+void validateISSN() throws Check_ISSN_Exception {
+    if (issn.length() != 9) {
+        throw new Check_ISSN_Exception("ISSN must be exactly 9 characters long.");
+    }
+
+    if (issn.charAt(4) != '-') {
+        throw new Check_ISSN_Exception("ISSN must have a hyphen at the 5th position.");
+    }
+
+    for (int i = 0; i < 4; i++) {
+        if (!Character.isDigit(issn.charAt(i))) {
+            throw new Check_ISSN_Exception("First four ISSN characters must be digits.");
+        }
+    }
+
+    for (int i = 5; i < 9; i++) {
+        if (!Character.isDigit(issn.charAt(i))) {
+            throw new Check_ISSN_Exception("Last four ISSN characters must be digits.");
+        }
+    }
+}
+
 }
