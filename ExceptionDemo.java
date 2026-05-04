@@ -5,6 +5,12 @@
 The program will consist of two main parts: 
     * Journal Registration system
     * Passenger Registration system. 
+
+1. Journal Registration system:
+
+    * user-defined exceptions will be created to validate journal details such as name, journal ID, issue number, and ISSN. 
+    * The validation will be performed using character-level checks instead of regular expressions. 
+    * Only valid journal entries will be accepted and displayed, ensuring robust error handling.
 */
 
 
