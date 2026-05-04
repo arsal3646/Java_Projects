@@ -375,6 +375,11 @@ for (Journal j : journals) {
     }
 }
 
+System.out.println("\nValid Journals:");
+
+for (Journal j : validJournals) {
+    System.out.println(j.name + " | " + j.journalId + " | " + j.issueNumber + " | " + j.issn);
+}
 
 
 
