@@ -55,8 +55,6 @@ class CheckNameException extends Exception {
     }
 }
 
-
-
 /*  * The CheckJournalIdException class is also a custom exception that extends the Exception class.
     * An exception is thrown when the journal ID is invalid such as not following the required format or containing invalid characters. 
     * Valid characters for journal ID include only letters and numbers only. Special characters are not allowed.
