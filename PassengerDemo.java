@@ -2,7 +2,14 @@ import java.util.*;
 
 // I created a class (blueprint) for the passengers. It has all the attributes that a passenger has.
 
-class Passenger {
+class Passenger implements Comparable<Passenger> {  // implements allows us to compare passengers based on their names for sorting purposes.
+                                                    // The class says, "I know how to compare my name with another Passenger name"  
+    
+    public int compareTo(Passenger other) {         // This method compares current Passenger object with another Passenger object based on name.  
+    return this.name.compareToIgnoreCase(other.name); // This line compares the names of two passengers in a case-insensitive manner.         
+    }
+
+    
     String name;            // name of the passenger
     String passengerId;     // unique identifier for the passenger (This must remain unique for each passenger)
                             // This must be 12 digits long and should not contain any letters or special characters.
@@ -165,23 +172,25 @@ passengers.add(p5);
     * It has a compare method that compares two objects of the "same" type, e.g. two Passenger objects. 
     * The above (i.e. two same objects comparison) is same as comparable, but 
     * the difference is that it is used when we want to sort objects based on different criteria.
-    * A class that implements Comparator can be used to sort objects of another class based on specific criteria, without modifying the class itself.   
-*/
+*/    
 
-Collections.sort(passengers, new Comparator<Passenger>() {
+Collections.sort(passengers, new Comparator<Passenger>() {  // comparator to sort passengers based on name
     public int compare(Passenger a, Passenger b) {
         return a.name.compareTo(b.name);  // This line compares the names of two passengers based on alphabetical order.
     }
+   });
 
 // The below code sorts the passengers list based on the age of the passengers in ascending order.
 
-Collections.sort(passengers, new Comparator<Passenger>() {  // comparator to sort passengers based on age
+/* Collections.sort(passengers, new Comparator<Passenger>() {  // comparator to sort passengers based on age
     public int compare(Passenger a, Passenger b) {          
         return a.age - b.age;
-    }
-});
+}
 
 });    
+*/
+
+Collections.sort(passengers);  // This line sorts the passengers list based on the natural ordering (i.e., by name).
 
 System.out.println("\nPassenger List:\n");  // This line prints a header for the passenger list.
 
