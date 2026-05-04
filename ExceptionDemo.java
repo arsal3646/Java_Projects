@@ -204,9 +204,15 @@ class Journal {
     * If any character is found that is not a letter or a digit, a CheckJournalIdException is thrown with a message to user.
 
     * The method does not return any value, as indicated by the "void" keyword in the method signature.
+
+    *The "throws" keyword in the method signature indicates that this method may throw a CheckJournalIdException.
 */
 
     void validateJournalId() throws CheckJournalIdException {
+
+    // less-than journalId.length() because we want to check each character of the journal ID, and the index starts from 0.
+    // The ! before Character.isLetterOrDigit() means that if the character is NOT a letter or a digit.
+        
     for (int i = 0; i < journalId.length(); i++) {
         if (!Character.isLetterOrDigit(journalId.charAt(i))) {
             throw new CheckJournalIdException("Journal ID must contain only letters and numbers.");
