@@ -220,6 +220,8 @@ class Journal {
     }
 }
 
+
+
 void validateIssueNumber() throws CheckIssueNumberException {
     if (issueNumber.length() > 20) {
         throw new CheckIssueNumberException("Issue number must not exceed 20 characters.");
