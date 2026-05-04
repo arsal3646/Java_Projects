@@ -220,13 +220,39 @@ class Journal {
     }
 }
 
+/* * The below method is our third validation method, i.e. validateIssueNumber(). 
 
+    * This method validates the journal issue number according to the criteria given in the assignment requirements.
+    * The issue number must not exceed 20 characters in length. 
+    * If the issue number exceeds this limit, a CheckIssueNumberException is thrown with an appropriate error message.
+
+    * The method signature includes "throws CheckIssueNumberException". 
+    * 'Throws' indicates that this method may throw a CheckIssueNumberException if the validation fails.
+*/
 
 void validateIssueNumber() throws CheckIssueNumberException {
     if (issueNumber.length() > 20) {
         throw new CheckIssueNumberException("Issue number must not exceed 20 characters.");
     }
 }
+
+/* * The below method is our fourth validation method, i.e. validateISSN().
+
+    * This method validates the ISSN of the journal according to the assignment requirements.
+    * The ISSN must be exactly 9 characters long and follow the format NNNN-NNNN.
+    * If the ISSN does not meet these criteria, a Check_ISSN_Exception is thrown with an appropriate error message.
+
+    * The method signature includes "throws Check_ISSN_Exception". 
+    * 'Throws' indicates that this method may throw a Check_ISSN_Exception if the validation fails.
+
+    * The method performs three checks as required by the assignment:
+    
+        1. Is the length of the ISSN exactly 9 characters? If not, it throws an exception with a message.
+        
+        2. Is hyphen at the 5th position (index 4) a hiphen? If not, it throws an exception with a message.
+        
+        3. Are first four characters and the last four characters digits? If not, it throws an exception with a message. 
+*/
 
 void validateISSN() throws Check_ISSN_Exception {
     if (issn.length() != 9) {
@@ -236,6 +262,9 @@ void validateISSN() throws Check_ISSN_Exception {
     if (issn.charAt(4) != '-') {
         throw new Check_ISSN_Exception("ISSN must have a hyphen at the 5th position.");
     }
+        
+    // The first for-loop checks the first four characters (index 0 to 3) to ensure they are digits.
+    // The second for-loop checks the last four characters (index 5 to 8) to ensure they are digits.
 
     for (int i = 0; i < 4; i++) {
         if (!Character.isDigit(issn.charAt(i))) {
