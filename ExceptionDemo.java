@@ -371,21 +371,17 @@ for (Journal j : journals) {
         validJournals.add(j);
 
     } catch (Exception e) {
-        System.out.println("Invalid Journal: " + e.getMessage());
+        System.out.println("\nInvalid Journal: " + e.getMessage());
     }
 }
 
-System.out.println("\nValid Journals:");
+System.out.println("\nValid Journals are as below:\n");
 
-for (Journal j : validJournals) {
-    System.out.println(j.name + " | " + j.journalId + " | " + j.issueNumber + " | " + j.issn);
+for (Journal j : validJournals) 
+{
+    System.out.println(j.name + " : " + j.journalId + " : " + j.issueNumber + " : " + j.issn);
 }
 
-
-
-    }
-
-
-
+}
 
 }
