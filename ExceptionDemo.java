@@ -294,5 +294,17 @@ void validateISSN() throws Check_ISSN_Exception {
 public class ExceptionDemo {
     public static void main(String[] args) {
 
+/*  * ArrayList is a dynamic size array that can hold objects.
+    * We are creating an ArrayList to store valid Journal objects after they have been validated.
+    * The <> syntax is used to specify the type of objects that the ArrayList will hold, which in this case is Journal objects.
+
+    * Is this <> meaning Generics in Java? 
+    * Yes, it is. Generics allow us to specify the type of objects that a collection can hold, providing type safety at compile time.
+    * In our case, we are specifying that our ArrayList will only hold Journal objects.
+    * This will help us prevent errors and ensure type-safety.         
+*/
+        ArrayList<Journal> validJournals = new ArrayList<>();
+
+
     }
 }
