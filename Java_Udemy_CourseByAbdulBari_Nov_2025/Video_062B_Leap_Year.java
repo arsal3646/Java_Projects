@@ -1,6 +1,6 @@
 // Student Challenge: Find a given year is a leap year
 
-import java.lang.*;
+
 import java.util.*;  // To use Scanner class
 
 class Video_062B_Leap_Year
@@ -12,7 +12,7 @@ class Video_062B_Leap_Year
        System.out.println("Please enter a year in yyyy format, e.g. 2015 or 1983");
        Scanner sc = new Scanner(System.in);
        int year = sc.nextInt();
-
+sc.close();
        if ((year % 4) == 0)
        {
         if((year % 100) == 0)
@@ -32,4 +32,5 @@ class Video_062B_Leap_Year
         System.out.println("It is not a leap year because of 4-years rule.");
        } 
     }
+    
 }

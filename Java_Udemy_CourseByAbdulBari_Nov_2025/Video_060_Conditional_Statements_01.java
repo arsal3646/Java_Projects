@@ -1,6 +1,5 @@
 // topics include relational operaters and conditional statements
-import java.lang.*;
-import java.util.Scanner;
+
 
 class Video_060_Conditional_Statements_01
 {

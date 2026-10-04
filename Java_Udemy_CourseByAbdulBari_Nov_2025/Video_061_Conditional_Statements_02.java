@@ -2,7 +2,7 @@
 // Student Challenge: Find a person is young or not
 // Student Challenge: Find grades for given marks
 
-import java.lang.*;
+
 import java.util.Scanner;
 
 class Video_061_Conditional_Statements_02
@@ -22,7 +22,7 @@ class Video_061_Conditional_Statements_02
         {
             System.out.println("The given number is an odd number.");
         }
-
+        sc.close();
         System.out.println("Please enter a LONG number.");
         long m = sc.nextLong();
 
