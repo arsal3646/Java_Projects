@@ -190,6 +190,8 @@ Collections.sort(passengers, new Comparator<Passenger>() {  // comparator to sor
 });    
 */
 
+sc.close();
+
 Collections.sort(passengers);  // This line sorts the passengers list based on the natural ordering (i.e., by name).
 
 System.out.println("\nPassenger List:\n");  // This line prints a header for the passenger list.
