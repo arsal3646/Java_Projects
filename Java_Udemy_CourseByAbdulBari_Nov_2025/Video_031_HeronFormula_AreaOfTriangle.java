@@ -1,7 +1,7 @@
 // Another formula for Area of Triangle is (s(s-a)(s-b)(s-c))^(1/2)
 // s = (a + b + c)/2
 
-import java.lang.*;
+// import java.lang.*;
 import java.util.Scanner;
 
 class Video_031_HeronFormula_AreaOfTriangle
@@ -12,6 +12,7 @@ class Video_031_HeronFormula_AreaOfTriangle
         double area2;
 
         Scanner sc = new Scanner(System.in);
+
         
         System.out.println("Please provide length of first side of the triangle: ");
         a = sc.nextFloat();
@@ -29,7 +30,7 @@ class Video_031_HeronFormula_AreaOfTriangle
 
         System.out.println("Area of the triangle is: "+area1);
         System.out.println("Area of the triangle is: "+area2);
-
+        sc.close();
 
     }
 
