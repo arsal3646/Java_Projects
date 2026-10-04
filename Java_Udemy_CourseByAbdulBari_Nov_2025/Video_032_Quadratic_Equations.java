@@ -4,7 +4,7 @@
 // Root r1 = (-b+(b^2 -4ac)^(1/2)) / 2a
 // Root r2 = (-b-(b^2 -4ac)^(1/2)) / 2a
 
-import java.lang.*;
+// import java.lang.*;
 import java.util.Scanner;
 
 class Video_032_Quadratic_Equations
@@ -32,7 +32,7 @@ class Video_032_Quadratic_Equations
                 
         System.out.println("The first root is: "+r1);
         System.out.println("The second root is: "+r2);
-
+sc.close();
         if (Discriminant >= 0)
             {
                 r1 = (-b + Math.sqrt(Discriminant)) / (2*a);
