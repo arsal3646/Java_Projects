@@ -1,5 +1,5 @@
 // Cuboid is rectangle with a height.
-import java.lang.*;
+
 import java.util.*;
 
 class Video_033_Cuboid
@@ -28,6 +28,7 @@ class Video_033_Cuboid
 
         System.out.println("Area is: "+area);
         System.out.println("Volume is: "+volume);
+        sc.close();
     }
 
 }

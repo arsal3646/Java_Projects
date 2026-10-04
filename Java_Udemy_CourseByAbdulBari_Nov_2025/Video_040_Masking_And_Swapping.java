@@ -2,8 +2,6 @@
 
 // Challenge No.2: Perform Masking (OR Operation) and Merging (AND Operation)
 
-import java.lang.*;
-
 class Video_040_Masking_And_Swapping
 {
     public static void main (String args[])
