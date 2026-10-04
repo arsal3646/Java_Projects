@@ -2,7 +2,6 @@
 // FInd if a Number is Hexa-decimal or not.
 // Find if the data in Date format (dd/mm/yyyy) or not. 
 
-import java.lang.*;
 import java.util.*;
 
 class Video_056_Regular_Expressions
@@ -21,7 +20,7 @@ class Video_056_Regular_Expressions
 
         String str1 = String.valueOf(a);
         String str2 = String.valueOf(b);
-        
+        sc.close();
         System.out.println("Checks for Binary NUmbers: ");
         System.out.println(str1.matches("[01]*"));   // it means as many times 0 or 1 can appear. It can be ZERO times also.
         System.out.println(str1.matches("[01]+"));  // it will ensure that at least one time 01 is there.

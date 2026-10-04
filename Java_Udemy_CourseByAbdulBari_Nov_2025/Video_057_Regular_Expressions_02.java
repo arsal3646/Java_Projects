@@ -2,8 +2,7 @@
 // remove spaces from a string
 // find number of words in a string
 
-import java.lang.*;
-import java.util.*;
+
 
 class Video_057_Regular_Expressions_02
 {
