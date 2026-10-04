@@ -38,7 +38,7 @@ class Video_040_Masking_And_Swapping
     int fourth = third & 0xFF;          // to get decimal value (not useful here)
 
     
-    String binary = String.format("%8s", Integer.toBinaryString(fourth)).replace(' ', '0'); // to show output as binary - I copied this code from chatGPT. Yet to learn how to do this.
+    // String binary = String.format("%8s", Integer.toBinaryString(fourth)).replace(' ', '0'); // to show output as binary - I copied this code from chatGPT. Yet to learn how to do this.
 
     System.out.println("\nThe merged value is now equal to binary number "+binary_third+" and its decimal value is equivalent to "+fourth);
 

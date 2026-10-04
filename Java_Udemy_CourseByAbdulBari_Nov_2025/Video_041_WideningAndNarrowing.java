@@ -2,9 +2,6 @@
 // Widening (upcasting) means accomodating smaller data type (e.g. byte or short) in bigger data type (e.g. int) and must be compatible (char is not compatible with byte even though size of char is 2 bytes while byt is one).
 // Narrowing (downcasting) means opposite of widening.
 
-import java.lang.*;
-import java.util.Scanner;
-
 class Video_041_WideningAndNarrowing
 {
     public static void main(String args[])
@@ -13,18 +10,18 @@ class Video_041_WideningAndNarrowing
         byte b = 10;        // byte takes one byte
         short s = 10;       //short takes two bytes
         int i = 10;         // int takes four bytes
-        long l = 10;        
+        // long l = 10;        
         float f = 12.5f;
         double d = 10;
-        char c = 10;
-        boolean bl = true;
+        // char c = 10;
+        // boolean bl = true;
 
         // Check BYTE data type
         // b = s;           // This will not work because byte is smaller than short. Narrowing can help us do this.
         b = (byte) s;       // This is called typecasting or narrowing. CAVEAT: There will be loss of data so be sure that the value is smaller enough to fit in byte
         s = b;              // will one byte accommodate in two bytes (short)? Yes - this is called widening.
         i = b;
-        l = b;
+        // l = b;
         f = b;
         d = b;
         // c = b;           // byte is one byte while char is two bytes but still char will not take byte because they are not compatible.
@@ -33,8 +30,8 @@ class Video_041_WideningAndNarrowing
         // s = i;           // This will not work because short is smaller than int
         i = b;              // This will also accomodate because int is bigger than byte.
         i = s;              // THis will also accomodate because int is bigger than short.
-        l = s;
-        l = i;
+        // l = s;
+        // l = i;
         
         // i = f;           // This will not work because float is bigger than int.
 
